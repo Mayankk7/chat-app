@@ -21,8 +21,14 @@ let count = 0;
 io.on('connection', (socket)=>{
     console.log("New connection");
 
-    socket.emit('message' ,generateMessage('Welcome') );
-    socket.broadcast.emit('message', generateMessage('new user Joined'))
+    socket.on('join', ({username, room})=> {
+           
+        socket.join(room)
+        socket.emit('message' ,generateMessage('Welcome') );
+        socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined !`))
+        
+    })
+
 
     socket.on('sendMessage',(message, callback) => {
         const filter = new Filter();
@@ -31,7 +37,7 @@ io.on('connection', (socket)=>{
             return callback('Profanity not allowed');
         }
         
-        io.emit('message', generateMessage(message));
+        io.to('aha').emit('message', generateMessage(message));
         callback()
     });
 
