@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/favicon.png">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Chat App</title>
 </head>
 
@@ -38,7 +39,7 @@
                 <span class="message__name">{{username}}</span>
                 <span class=" message__meta">{{createdAt}}</span>
             </p>
-            <p>{{message}}</p>
+            <p style="padding:5px;">{{message}}</p>
         </div>
     </script>
 
@@ -48,13 +49,13 @@
                 <span class="message__name">{{username}}</span>
                 <span class="message__meta">{{createdAt}}</span>
             </p>
-            <p><a href="{{url}}" target="_blank">My Location</a></p>
+            <p style="padding:5px;"><a href="{{url}}" target="_blank" style="color: blue; text-decoration: none;"><i class="fa fa-map-marker" aria-hidden="true"></i>  My Location</a></p>
         </div>
     </script>
 
     <script id="sidebar-template" type="text/html">
         <h2 class="room-title">{{room}}</h2>
-        <h3 class="list-title">Users</h3>
+        <h3 class="list-title" style="text-decoration: underline;">USERS</h3>
         <ul class="users">
             {{#users}}
                 <li>{{username}}</li>

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html {
@@ -18,6 +19,7 @@ body {
     line-height: 1.4;
     color: #333333;
     font-family: Helvetica, Arial, sans-serif;
+
 }
 
 h1 {
@@ -87,6 +89,7 @@ button:disabled {
 
 .chat {
     display: flex;
+    height:100vh!important;
 }
 
 .chat__sidebar {
@@ -94,7 +97,6 @@ button:disabled {
     color: white;
     background: #333744;
     width: 225px;
-    overflow-y: scroll
 }
 
 /* Chat styles */
@@ -108,6 +110,7 @@ button:disabled {
 
 .chat__messages {
     flex-grow: 1;
+    width:100vw;
     padding: 24px 24px 0 24px;
     overflow-y: scroll;
 }
